@@ -11,7 +11,14 @@
     <img src="LuzIA.png" width="500px" /> 
 
 
-- ### TODO
+- ### Voicify
+    Voicify es una página web que permita generar covers de cualquier canción pasándole el link de YouTube o subiendo algun archivo de sonido.
+
+    Además, la página nos provee de determinados modelos de personas reales y personajes ficticios para interpretarlas; o los usarios pueden crear los propios.
+    Si bien el uso de la IA es de pago, se pueden escuchar de forma gratuita los covers realizados por otros usuarios.
+
+    <img src="Voicify.png" width="500px" /> 
+    
 
 
 ## 2. ¿Qué se entiende por inteligencia artificial?
