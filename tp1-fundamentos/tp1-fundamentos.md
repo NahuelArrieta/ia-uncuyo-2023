@@ -19,5 +19,19 @@ Otro argumento viene de la mano del **Teorema de la incompletitud de Gödel**, y
 
 El **argumento de la informalidad** afirma que el comportamiento humano es demasiado complejo para ser capturado por un conjunto de reglas (qualification problem).
 
+<h3 style="text-decoration:underline"> Inteligencia Artificial Fuerte <h3>
 
+Muchos filósofos establecen que si una computadora pasa el Test de Turing no significa necesariamente que esté pensando, sino que esta simulando hacerlo.
+
+Para que una computadora pueda pensar tiene que se consciente de su estado mental, sentir emociones, y tener creencias y deseos. La objeción a este argumento por parte de Turing es que no existe ninguna evidencia directa de los estados mentales de otros humanos.
+
+John Searle plantea que si las simulaciones por computadora de tormentas no nos mojan, entonces una simulación del pensamiento no es pensamiento. Sin embargo, una simulación por computadora de la suma es suma, y que una de ajedrez es ajedrez. lo que da lugar a la siguiente pregunta: ¿Los procesos mentales se parecen más a tormentas o más a la suma?
+
+La teoría monista de la mente (fisicalismo) afirma que la mente no está separada del cuerpo y  que los estados mentales son estados físicos. Esto permite, al menos en principio, la posibilidad de una IA fuerte; pero resulta difícil explicar cómo los estados físicos pueden ser simultáneamente estados mentales.
+
+Imagina que tu cerebro es retirado de tu cuerpo al nacer y colocado en un tanque que mantiene tu cerebro, permitiendo su crecimiento y desarrollo. Al mismo tiempo, señales electrónicas son enviadas a tu cerebro desde una simulación por computadora de un mundo ficticio, y las señales motoras de tu cerebro son interceptadas y usadas para modificar la simulación según sea necesario. La vida simulada que vives replica exactamente la vida que habrías vivido si tu cerebro no hubiera sido colocado en el tanque. Así, podrías tener un estado cerebral idéntico al de alguien que realmente está comiendo una hamburguesa real, pero sería literalmente falso decir que tienes el estado mental de "saber que se está comiendo una hamburguesa". No estás comiendo una hamburguesa, ni siquiera has experimentado una hamburguesa, y por lo tanto, no podrías tener ese estado mental.
+
+Este ejemplo parece contradecir la idea de que los estados cerebrales determinan los estados mentales. Una manera de resolver el dilema es afirmar que el contenido de los estados mentales puede interpretarse desde dos perspectivas diferentes:
+- La vista de "contenido amplio" lo interpreta desde el punto de vista de un observador externo omnisciente con acceso a toda la situación.
+- El "contenido estrecho" considera solo el estado cerebral. Simplemente no tiene sentido decir que si un sistema de IA está realmente pensando depende de condiciones fuera de ese sistema.
 
