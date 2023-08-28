@@ -43,5 +43,8 @@ La teoría del **funcionalismo** dice que un estado mental es cualquier condici�
 2. Los acontecimientos mentales conscientes en el cerebro normal no tienen conexión causal con la conducta y no están presentes en el cerebro electrónico, que por tanto no es consciente.
 3. El experimento es imposible.
 
+El **naturalismo biológico** dice que los estados mentales son características emergentes de alto nivel son causadas por procesos físicos de bajo nivel en las neuronas, y son las propiedades de las neuronas las que importan. Afirma, también, que ejecutar el programa apropiado (es decir, tener las salidas correctas) no es una condición suficiente para ser una mente.
+
+En el ejemplo del **cuarto chino** un ser humano que solo entiende inglés está en un cuarto equipado con un manual de instrucciones escrito en inglés. A través de una abertura en el cuarto aparecen trozos de papel con símbolos indescifrables. El  humano encuentra símbolos coincidentes en el manual de instrucciones y sigue las indicaciones. Las instrucciones pueden incluir escribir símbolos en nuevos trozos de papel, encontrar símbolos en las pilas, reorganizar las pilas, y así sucesivamente. Eventualmente, las instrucciones harán que uno o más símbolos sean transcritos en un trozo de papel que se envía de vuelta al mundo exterior.
 
 
