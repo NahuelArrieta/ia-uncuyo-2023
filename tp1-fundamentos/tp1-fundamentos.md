@@ -32,6 +32,16 @@ La teoría monista de la mente (fisicalismo) afirma que la mente no está separa
 Imagina que tu cerebro es retirado de tu cuerpo al nacer y colocado en un tanque que mantiene tu cerebro, permitiendo su crecimiento y desarrollo. Al mismo tiempo, señales electrónicas son enviadas a tu cerebro desde una simulación por computadora de un mundo ficticio, y las señales motoras de tu cerebro son interceptadas y usadas para modificar la simulación según sea necesario. La vida simulada que vives replica exactamente la vida que habrías vivido si tu cerebro no hubiera sido colocado en el tanque. Así, podrías tener un estado cerebral idéntico al de alguien que realmente está comiendo una hamburguesa real, pero sería literalmente falso decir que tienes el estado mental de "saber que se está comiendo una hamburguesa". No estás comiendo una hamburguesa, ni siquiera has experimentado una hamburguesa, y por lo tanto, no podrías tener ese estado mental.
 
 Este ejemplo parece contradecir la idea de que los estados cerebrales determinan los estados mentales. Una manera de resolver el dilema es afirmar que el contenido de los estados mentales puede interpretarse desde dos perspectivas diferentes:
+
 - La vista de "contenido amplio" lo interpreta desde el punto de vista de un observador externo omnisciente con acceso a toda la situación.
 - El "contenido estrecho" considera solo el estado cerebral. Simplemente no tiene sentido decir que si un sistema de IA está realmente pensando depende de condiciones fuera de ese sistema.
+
+
+La teoría del **funcionalismo** dice que un estado mental es cualquier condición causal intermedia entre entrada y salida. Un experimento propone reemplazar gradulamente todas las neuronas de alguien por dispositivos electrónicos, y las posibles conclusiones son las siguientes:
+
+1. Los mecanismos causales de la conciencia que generan este tipo de salidas en los cerebros normales siguen funcionando en la versión electrónica, que por lo tanto es consciente.
+2. Los acontecimientos mentales conscientes en el cerebro normal no tienen conexión causal con la conducta y no están presentes en el cerebro electrónico, que por tanto no es consciente.
+3. El experimento es imposible.
+
+
 
