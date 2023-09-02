@@ -27,21 +27,15 @@ class Enviroment:
                 if prob < dirt_rate:
                     self.chart[i][j] = 1
 
-    # def validate_action(self, agent, action):
-    #     match action:
-    #         case Action.DOWN:
-    #             return agent.posY+1 < self.sizeY
-    #         case Action.UP:
-    #             return agent.posY-1 >= 0
-    #         case Action.RIGHT:
-    #             return agent.posX+1 < self.sizeX
-    #         case Action.LEFT:
-    #             return agent.posX-1 >= 0
-    #         case Action.CLEAN:
-    #             return True 
-    #     return False
+    def validate_pos(self, posX, posY):
+        if posX >= 0 and posX < self.sizeX:
+            if posY >= 0 and posY < self.sizeY:
+                return True
+        return False
     
     def is_dirty(self, posX, posY):
         return self.chart[posX][posY] == 1
     
+    def clean_slot(self, posX, posY):
+        self.chart[posX][posY] = 0
     

@@ -8,13 +8,35 @@ class Agent:
         self.claned_slots = 0
         self.actions_done = 0
 
-    # def up(self):
-    # def down(self):      
-    # def left(self):
-    # def right(self):
-    # def suck(self): # Limpia
-    # def idle(self): # no hace nada
-    # def perspective(self,env): #sensa el entorno
+    def move(self, new_posX, new_posY):
+        if not(self.env.validate_pos(new_posX, new_posY)):
+            return
+        
+        self.posX = new_posX
+        self.posY = new_posY
+        self.actions_done += 1
+
+    def up(self):
+        self.move(self.posX -1 , self.posY)
+
+    def down(self):     
+        self.move(self.posX +1 , self.posY)
+
+    def left(self):
+        self.move(self.posX, self.posY -1)
+
+    def right(self):
+        self.move(self.posX, self.posY +1)
+
+    def suck(self): 
+        if self.env.is_dirty(self.posX, self.posY):
+            self.claned_slots += 1
+        self.env.clean_slot(self.posX, self.posX)
+        self.actions_done += 1
+    
+    def idle(self):
+        return
+
     # def think(self): # implementa las acciones a seguir por el agente
 
     def get_performance(self): 
