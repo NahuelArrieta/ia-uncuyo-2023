@@ -1,13 +1,6 @@
 import random
 from enum import Enum
 
-class Action(Enum):
-    UP = "UP"
-    DOWN = "DOWN"
-    LEFT = "LEFT"
-    RIGHT = "RIGHT"
-    CLEAN = "CLEAN"
-    IDLE = "IDLE"
 
 class Enviroment: 
     def __init__(self,sizeX,sizeY,init_posX,init_posY,dirt_rate):
@@ -18,7 +11,7 @@ class Enviroment:
         self.sizeY = sizeY
         self.init_posX = init_posX
         self.init_posY = init_posY
-        
+        self.dirty_slots = 0
 
         # Fill chart:
         for i in range(sizeX):
@@ -26,6 +19,7 @@ class Enviroment:
                 prob = random.random()
                 if prob < dirt_rate:
                     self.chart[i][j] = 1
+                    self.dirty_slots += 1
 
     def validate_pos(self, posX, posY):
         if posX >= 0 and posX < self.sizeX:
@@ -38,4 +32,5 @@ class Enviroment:
     
     def clean_slot(self, posX, posY):
         self.chart[posX][posY] = 0
+        self.dirty_slots -= 1
     
