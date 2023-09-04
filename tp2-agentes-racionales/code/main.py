@@ -6,10 +6,19 @@ def create_agent(sizeX, sizeY, dirt_rate):
     init_posY = random.randint(0, sizeY - 1)
     env = Enviroment(sizeX, sizeY,init_posX,init_posY,dirt_rate)
     agent = Agent(env)  
-    agent.print_environment()
-    print("\n--------------------------\n")
     return agent
 
-reflexive_agent = create_agent(100,100,0.5)
-reflexive_agent.act_reflexive()
-reflexive_agent.print_performance()
+sizeX = 4
+sizeY = 4
+dirt_rate = 0.5
+print("Reflexive agent ")
+for i in range(100):
+    reflexive_agent = create_agent(sizeX,sizeY,dirt_rate)
+    reflexive_agent.act_reflexive()
+    reflexive_agent.print_performance()
+
+print("Random agent ")
+for i in range(100):
+    random_agent = create_agent(sizeX,sizeY,dirt_rate)
+    random_agent.act_random()
+    random_agent.print_performance()

@@ -39,7 +39,7 @@ class Agent:
     def suck(self): 
         if self.env.is_dirty(self.posX, self.posY):
             self.claned_slots += 1
-        self.env.clean_slot(self.posX, self.posY)
+            self.env.clean_slot(self.posX, self.posY)
         self.actions_done += 1
     
     def idle(self):
@@ -63,9 +63,12 @@ class Agent:
         else:
             self.make_random_move()
 
+    def get_performance(self):
+        return (self.claned_slots/self.actions_done)*100
+    
     def print_performance(self): 
-        self.print_environment()
-        print("Performance: " + str(self.claned_slots) + " slots cleaned in " + str(self.actions_done) + " actions.")
+        performance = (self.claned_slots/self.actions_done)*100
+        print( str(self.claned_slots) + " slots cleaned in " + str(self.actions_done) + " actions. " + "Performance: " + str(performance))
     
     def print_environment(self):
         for i in range(self.env.sizeX):
@@ -97,3 +100,4 @@ class Agent:
                 self.suck()
             else:
                 self.idle()
+        
