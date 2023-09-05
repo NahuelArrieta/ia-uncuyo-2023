@@ -30,12 +30,12 @@ def meassure_performance(sizeX, sizeY, dirt_rate):
         random_agent = create_agent(sizeX,sizeY,dirt_rate)
         random_agent.act_random()
         random_agent_performance += random_agent.get_performance()
-    avg_reflexive_agent_performance = random_agent_performance/iterations
+    avg_random_agent_performance = random_agent_performance/iterations
 
     print("Reflexive agent performance: " + str(avg_reflexive_agent_performance))    
-    print("Random agent performance: " + str(avg_reflexive_agent_performance))
+    print("Random agent performance: " + str(avg_random_agent_performance))
 
-    write_csv(sizeX, sizeY, dirt_rate, random_agent_performance, reflexive_agent_performance, file)
+    write_csv(sizeX, sizeY, dirt_rate, avg_random_agent_performance, avg_reflexive_agent_performance, file)
     
 # Create charts of 2x2, 4x4, 8x8, 16x16, 32x32, 64x64, 128x128
 Sizes = [2, 4, 8, 16, 32, 64, 128]
@@ -43,7 +43,7 @@ Sizes = [2, 4, 8, 16, 32, 64, 128]
 # Create dirt_rates of 0.1, 0,2 0,4, 0.8
 Dirt_rates = [0.1, 0.2, 0.4, 0.8]
 
-file = open('./tp2-agentes-racionales/results/t2-performance.csv', 'w')
+file = open('./tp2-agentes-racionales/results/tp2-performance.csv', 'w')
 file.write("sizeX,sizeY,dirt_rate,random_agent_performance,reflexive_agent_performance\n")
 
 for size in Sizes:
