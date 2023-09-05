@@ -64,10 +64,12 @@ class Agent:
             self.make_random_move()
 
     def get_performance(self):
-        return (self.claned_slots/self.actions_done)*100
+        if self.actions_done == 0:
+            return 0
+        return (self.claned_slots/self.actions_done)
     
     def print_performance(self): 
-        performance = (self.claned_slots/self.actions_done)*100
+        performance = (self.claned_slots/self.actions_done)
         print( str(self.claned_slots) + " slots cleaned in " + str(self.actions_done) + " actions. " + "Performance: " + str(performance))
     
     def print_environment(self):
