@@ -57,7 +57,7 @@ class Enviroment:
         if not(self.validate_pos(node)):
             return None
         return (node[0]+1, node[1])
-    
+
     def print_environment(self):
         for i in range(self.sizeX):
             print("\n| ", end="")
