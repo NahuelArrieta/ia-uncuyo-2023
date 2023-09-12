@@ -60,15 +60,16 @@ class Enviroment:
 
     def print_environment(self):
         for i in range(self.sizeX):
-            print("\n| ", end="")
+            print("\n|", end="")
             for j in range(self.sizeY):
                 ## print the agent as 'X'
                 if i == self.init_posX and j == self.init_posY:
-                    print("I ",  end = "")
+                    print("I",  end = "")
                 elif i == self.end_posX and j == self.endPosY:
-                    print("X ",  end = "")
+                    print("X",  end = "")
                 elif self.chart[i][j] == 1:
-                    print("  ",  end = "")
+                    print(" ",  end = "")
                 else:
-                    print("0 ", end = "")
+                    print("█", end = "")
             print("|", end="")
+
