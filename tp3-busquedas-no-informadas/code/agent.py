@@ -1,6 +1,7 @@
 from enviroment import *
 from enum import Enum
 from random import *
+from utils import *
 
 
 class Action(Enum):
@@ -15,20 +16,35 @@ class Agent:
         self.init_posY = env.init_posY
         self.env = env
         self.visited_nodes = 0
+        self.last_node = None
+
+
+    # Get Path to last node
+    def print_path(self):
+        path = []
+        node = self.last_node
+        while node != None:
+            path.append(node)
+            node = node.parent
+        while len(path) > 0:
+            node = path.pop()
+            print("("+str(node.posX)+","+str(node.posY)+")", end=" ")
+    
     
     # BFS
     def breadth_first_search(self):
         queue = []
         visited = []
 
-        queue.append((self.init_posX, self.init_posY))
+        queue.append(Node(self.init_posX, self.init_posY))
         
         while len(queue) > 0:
             node = queue.pop(0)
-            if node == (self.env.end_posX, self.env.endPosY):
+            if self.env.is_end(node):
                 self.visited_nodes = len(visited)
+                self.last_node = node
                 return 
-            if node not in visited and node != None:
+            if node != None and in_list(visited, node) == False:
                 visited.append(node)
                 queue.append(self.env.right_node(node))
                 queue.append(self.env.left_node(node))
@@ -40,14 +56,15 @@ class Agent:
         stack = []
         visited = []
 
-        stack.append((self.init_posX, self.init_posY))
+        stack.append(Node(self.init_posX, self.init_posY))
         
         while len(stack) > 0:
             node = stack.pop()
-            if node == (self.env.end_posX, self.env.endPosY):
+            if self.env.is_end(node):
                 self.visited_nodes = len(visited)
+                self.last_node = node
                 return 
-            if node not in visited and node != None:
+            if node != None and in_list(visited, node) == False:
                 visited.append(node) 
                 stack.append(self.env.down_node(node))
                 stack.append(self.env.right_node(node))
@@ -56,48 +73,24 @@ class Agent:
         
 
     # Limited DFS
-    def LimitedDFS(self, limit):
+    def limited_DFS(self, limit):
         stack = []
         visited = []
 
-        stack.append((self.init_posX, self.init_posY))
+        stack.append(Node(self.init_posX, self.init_posY))
+
 
         while len(stack) > 0 and len(visited) < limit:
             node = stack.pop()
-            if node == (self.env.end_posX, self.env.endPosY):
+            if self.env.is_end(node):
                 self.visited_nodes = len(visited)
-                return
-            if node not in visited and node != None:
+                self.last_node = node
+                return 
+            if node != None and in_list(visited, node) == False:
                 visited.append(node)
                 stack.append(self.env.down_node(node))
                 stack.append(self.env.right_node(node))
                 stack.append(self.env.left_node(node))
                 stack.append(self.env.up_node(node))
     
-    # Uniform Cost Search
-    def uniform_cost_search(self):
-        prioriy_queue = []
-        visited = []
-
-        i = 0
-
-        def append_by_cost(prioriy_queue, node):
-            while i < len(prioriy_queue):
-                if prioriy_queue[i][2] > node[2]:
-                    prioriy_queue.insert(i, node)
-                    return
-                i += 1
-                
-        prioriy_queue.append((self.init_posX, self.init_posY, 0))
-
-        while len(prioriy_queue) > 0:
-            node = prioriy_queue.pop(0)
-            if node == (self.env.end_posX, self.env.endPosY, 0):
-                self.visited_nodes = len(visited)
-                return
-            if node not in visited and node != None:
-                visited.append(node)
-                append_by_cost(prioriy_queue,(self.env.down_node(node), node[2] + 1))
-                append_by_cost(prioriy_queue,(self.env.right_node(node), node[2] + 1))
-                append_by_cost(prioriy_queue,(self.env.left_node(node), node[2] + 1))
-                append_by_cost(prioriy_queue,(self.env.up_node(node), node[2] + 1))
+    

@@ -1,5 +1,11 @@
 import random
 
+class Node:
+    def __init__ (self, posX, posY, parent = None):
+        self.posX = posX
+        self.posY = posY
+        self.parent = parent
+
 class Enviroment: 
     def __init__(self, sizeX, sizeY, obstacle_rate):
         self.sizeX = sizeY
@@ -22,41 +28,54 @@ class Enviroment:
                 self.chart[i][j] = 1
                 obstacles -= 1
 
-    def is_free(self, posX, posY):
+    def is_free(self, node: Node):
+        posX = node.posX
+        posY = node.posY
         return self.chart[posX][posY] == 0
 
-    def validate_pos(self, node):
+    def is_end(self, node: Node):
+        if node == None:
+            return False
+        posX = node.posX
+        posY = node.posY
+        return (posX == self.end_posX and posY == self.endPosY)
+
+    def validate_pos(self, node: Node):
         if node == None:
             return False
         
-        posX = node[0]
-        posY = node[1]
+        posX = node.posX
+        posY = node.posY
         if posX >= 0 and posX < self.sizeX:
             if posY >= 0 and posY < self.sizeY:
-                if self.is_free(posX, posY):
+                if self.is_free(node):
                     return True
                 
         return False
     
-    def right_node(self, node):
-        if not(self.validate_pos(node)):
+    def right_node(self, node: Node):
+        newNode = Node(node.posX, node.posY+1, node)
+        if not(self.validate_pos(newNode)):
             return None
-        return (node[0], node[1]+1)
+        return (newNode)
     
     def left_node(self, node):
-        if not(self.validate_pos(node)):
+        newNode = Node(node.posX, node.posY-1, node)
+        if not(self.validate_pos(newNode)):
             return None
-        return (node[0], node[1]-1)
+        return (newNode)
     
     def up_node(self, node):
-        if not(self.validate_pos(node)):
+        newNode = Node(node.posX-1, node.posY, node)
+        if not(self.validate_pos(newNode)):
             return None
-        return (node[0]-1, node[1])
+        return (newNode)
     
     def down_node(self, node):
-        if not(self.validate_pos(node)):
+        newNode = Node(node.posX+1, node.posY, node)
+        if not(self.validate_pos(newNode)):
             return None
-        return (node[0]+1, node[1])
+        return (newNode)
 
     def print_environment(self):
         for i in range(self.sizeX):
