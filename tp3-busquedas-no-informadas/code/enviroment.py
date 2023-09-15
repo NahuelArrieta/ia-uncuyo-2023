@@ -77,18 +77,50 @@ class Enviroment:
             return None
         return (newNode)
 
-    def print_environment(self):
+    def get_direction(self, node: Node, nextNode: Node):
+        if node.posX == nextNode.posX:
+            if node.posY < nextNode.posY:
+                return "→"
+            else:
+                return "←"
+        else:
+            if node.posX < nextNode.posX:
+                return "↓"
+            else:
+                return "↑"       
+
+    def print_environment(self, path = None):
+        print_chart = [[" " for _ in range(self.sizeX)] for _ in range(self.sizeY)]
+
+        if path != None:
+            for i in range(len(path)-1):
+                node = path[i]
+                nextNode = path[i+1]
+                print_chart[node.posX][node.posY] = self.get_direction(node, nextNode)
+        
+        ## change inital pos from "↑→↓←" to "↑⇒⇓⇐"
+        arrow = print_chart[self.init_posX][self.init_posY]
+        if arrow == "→": arrow = "▶" 
+        if arrow == "↑": arrow = "▲"
+        if arrow == "↓": arrow = "▼"
+        if arrow == "←": arrow = "◀"
+        print_chart[self.init_posX][self.init_posY] = arrow
+
+        ## Set end as 'X'
+        print_chart[self.end_posX][self.endPosY] = "X"
+
+        ## Set obstacles as '█'
+        for i in range(self.sizeX):
+            for j in range(self.sizeY):
+                if self.chart[i][j] == 1:
+                    print_chart[i][j] = "█"
+                
+        ## print chart
         for i in range(self.sizeX):
             print("\n|", end="")
             for j in range(self.sizeY):
-                ## print the agent as 'X'
-                if i == self.init_posX and j == self.init_posY:
-                    print("I",  end = "")
-                elif i == self.end_posX and j == self.endPosY:
-                    print("X",  end = "")
-                elif self.chart[i][j] == 1:
-                    print(" ",  end = "")
-                else:
-                    print("█", end = "")
+                print(print_chart[i][j], end="")
             print("|", end="")
+           
+        
 

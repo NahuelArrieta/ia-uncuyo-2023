@@ -19,7 +19,7 @@ class Agent:
         self.last_node = None
 
 
-    # Get Path to last node
+    # PRint Path to last node
     def print_path(self):
         path = []
         node = self.last_node
@@ -29,6 +29,16 @@ class Agent:
         while len(path) > 0:
             node = path.pop()
             print("("+str(node.posX)+","+str(node.posY)+")", end=" ")
+    
+    ## Get Path
+    def get_path(self):
+        path = []
+        node = self.last_node
+        while node != None:
+            path.append(node)
+            node = node.parent
+        path.reverse()
+        return path 
     
     
     # BFS
@@ -44,7 +54,7 @@ class Agent:
                 self.visited_nodes = len(visited)
                 self.last_node = node
                 return 
-            if node != None and in_list(visited, node) == False:
+            if node != None and in_list(visited, node) == False and in_list(queue, node) == False:
                 visited.append(node)
                 queue.append(self.env.right_node(node))
                 queue.append(self.env.left_node(node))
@@ -64,7 +74,7 @@ class Agent:
                 self.visited_nodes = len(visited)
                 self.last_node = node
                 return 
-            if node != None and in_list(visited, node) == False:
+            if node != None and in_list(visited, node) == False and in_list(stack, node) == False:
                 visited.append(node) 
                 stack.append(self.env.down_node(node))
                 stack.append(self.env.right_node(node))
@@ -86,7 +96,7 @@ class Agent:
                 self.visited_nodes = len(visited)
                 self.last_node = node
                 return 
-            if node != None and in_list(visited, node) == False:
+            if node != None and in_list(visited, node) == False and in_list(stack, node) == False:
                 visited.append(node)
                 stack.append(self.env.down_node(node))
                 stack.append(self.env.right_node(node))
