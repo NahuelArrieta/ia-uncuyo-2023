@@ -56,7 +56,7 @@ def iterate(i):
 
 def printPaths():
     ## Create the enviroment
-    env = Enviroment(20,20,0.1)
+    env = Enviroment(15,15,0.1)
 
     ## BFS agent 
     agentBFS = Agent(env)
@@ -80,8 +80,8 @@ def printPaths():
 
 
 
-with multiprocessing.Pool() as pool:
-    pool.map(iterate, range(30))
+# with multiprocessing.Pool() as pool:
+#     pool.map(iterate, range(30))
 
 printPaths()
 
