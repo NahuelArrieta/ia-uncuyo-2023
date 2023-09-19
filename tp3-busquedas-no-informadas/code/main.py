@@ -6,25 +6,29 @@ import multiprocessing
 
 n = 100
 
+
+
+
+
 class Result:
-    def __init__(self, env, bfs_agent, dfs_agent, limited_dfs_agent, uc_search_agent, failed_agents):
+    def __init__(self, env, bfs_agent, dfs_agent, limited_dfs_agent, uc_search_agent):
         self.env = env
         self.bfs_agent = bfs_agent
         self.dfs_agent = dfs_agent
         self.limited_dfs_agent = limited_dfs_agent
         self.uc_search_agent = uc_search_agent
-        self.failed_agents = failed_agents
 
-def write_csv(bfs_agent, dfs_agent, limited_dfs_agent, uc_search_aget, file):
+def write_csv(bfs_agent, dfs_agent, limited_dfs_agent, uc_search_aget):
+    file = open('./tp3-busquedas-no-informadas/results/tp3-performance.csv', 'a')
     text = str(bfs_agent.visited_nodes) + "," + str(dfs_agent.visited_nodes) + "," + str(limited_dfs_agent.visited_nodes) + "," + str(uc_search_aget.visited_nodes) + "\n"
     file.write(text)
+    file.close()
 
 def iterate(i):
     print("iteration: ", str(i))
 
     ## Create the enviroment
     env = Enviroment(n,n,0.1)
-    failed_agents = 0
 
     ## BFS agent 
     agentBFS = Agent(env)
@@ -36,9 +40,7 @@ def iterate(i):
 
     ## Limited DFS agent
     agentLimitedDFS = Agent(env)
-    agentLimitedDFS.limited_DFS(3000)
-    if agentLimitedDFS.last_node == None:
-        failed_agents = 1
+    agentLimitedDFS.limited_DFS(5000)
 
     ## Uniform Cost Search agent
     agentUCS = Agent(env)
@@ -46,16 +48,23 @@ def iterate(i):
 
     print("iteration ", str(i), " finished")
 
-    ## Return the reults
-    return Result(env, agentBFS, agentDFS, agentLimitedDFS, agentUCS, failed_agents)
+    ## Write the reults
+    res = Result(env, agentBFS, agentDFS, agentLimitedDFS, agentUCS)
+    write_csv(res.bfs_agent, res.dfs_agent, res.limited_dfs_agent, res.uc_search_agent)
 
 
-def printPaths(result: Result):
-    env = result.env
-    agentBFS = result.bfs_agent
-    agentDFS = result.dfs_agent
-    agentLimitedDFS = result.limited_dfs_agent
-    agentUCS = result.uc_search_agent
+
+def printPaths():
+    ## Create the enviroment
+    env = Enviroment(20,20,0.1)
+
+    ## BFS agent 
+    agentBFS = Agent(env)
+    agentBFS.breadth_first_search()
+
+    ## DFS agent
+    agentDFS = Agent(env)
+    agentDFS.depth_first_search()
     
     ## Print the last enviroment
     print("Start position: (" + str(env.init_posX) + "," + str(env.init_posY) + ")")
@@ -69,32 +78,12 @@ def printPaths(result: Result):
     print("\n \n DFS path: ")
     env.print_environment(agentDFS.get_path())
 
-    print("\n \n Limited DFS path: ")
-    env.print_environment(agentLimitedDFS.get_path())
-
-    print("\n \n UCS path: ")
-    env.print_environment(agentUCS.get_path())
 
 
-
-## Create the file
-file = open('./tp3-busquedas-no-informadas/results/tp3-performance.csv', 'a')
-
-## Write the header
-file.write("bfs,dfs,limited_dfs,uc_search\n")
-
-failed_agents = 0
-
-## Get the performance of the agents
 with multiprocessing.Pool() as pool:
-    results = pool.map(iterate, range(1))
+    pool.map(iterate, range(30))
 
-for res in results:
-    failed_agents += res.failed_agents
-    write_csv(res.bfs_agent, res.dfs_agent, res.limited_dfs_agent, res.uc_search_agent, file)
-
-printPaths(results[0])
-print("\nFailed agents: ", str(failed_agents))
+printPaths()
 
 
 
@@ -102,5 +91,3 @@ print("\nFailed agents: ", str(failed_agents))
 
 
 
-## Close the file
-file.close()
