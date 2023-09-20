@@ -9,7 +9,7 @@ class Node:
         self.g = 0
 
     def set_g(self, distance_to_end):
-        self.g = self.cost + distance_to_end
+        self.g = self.cost + 5*distance_to_end
         
 
 class Enviroment: 
@@ -60,7 +60,11 @@ class Enviroment:
         return False
     
     def calculate_distance_to_end(self, node: Node):
-        return ((self.end_posX - node.posX)**2 + (self.end_posY-node.posY)**2)**(1/2)
+        distance_x = abs(self.end_posX - node.posX)
+        distance_y = abs(self.end_posY - node.posY)
+        
+        return distance_x + distance_y
+        
     
     def right_node(self, node: Node):
         newNode = Node(node.posX, node.posY+1, node, node.cost+1)
@@ -117,6 +121,7 @@ class Enviroment:
         if arrow == "↑": arrow = "▲"
         if arrow == "↓": arrow = "▼"
         if arrow == "←": arrow = "◀"
+        if arrow == " ": arrow = "S"
         print_chart[self.init_posX][self.init_posY] = arrow
 
         ## Set end as 'X'

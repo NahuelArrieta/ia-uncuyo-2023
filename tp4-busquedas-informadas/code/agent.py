@@ -22,14 +22,15 @@ class Agent:
         return len(self.visited)
 
     def insert(self, node: Node):
-        if node == None:
-            return
-        i = 0
-        cn = self.queue[0]
-        while cn.cost < node.cost:
-            i += 1
-            cn = self.queue[i]
-        self.queue.insert(i+1, node)
+        ## insert in priority queue based in node.g
+        if node != None:
+            for i in range(len(self.queue)):
+                cn = self.queue[i]
+                if node.g < cn.g:
+                    self.queue.insert(i, node)
+                    return
+            self.queue.append(node)
+
 
     # PRint Path to last node
     def print_path(self):
@@ -52,21 +53,36 @@ class Agent:
         path.reverse()
         return path 
     
-    
+    def print_queue(self):
+        for i in range(len(self.queue)):
+            cn = self.queue[i]
+            print("(" + str(cn.posX), ",", str(cn.posY), ";", str(cn.g), ")", end = " ")
+
+    def in_queue(self, node: Node):
+        for cn in self.queue:
+            if cn.posX == node.posX and cn.posY == node.posY:
+                return True
+        return False
+
     ## A* Search
     def a_star_search(self):
-        self.insert(Node(self.init_posX, self.init_posY))
-
+        
+        inital_node = Node(self.init_posX, self.init_posY)
+        inital_node.set_g(self.env.calculate_distance_to_end(inital_node))
+        self.insert(inital_node)
         while len(self.queue) > 0:
-            cn = self.queue.pop()
+            cn = self.queue.pop(0)
             self.visited.append(cn)
             if self.env.is_end(cn):
                 self.last_node = cn
                 return
-            self.insert(self.env.right_node(cn))
-            self.insert(self.env.left_node(cn))
-            self.insert(self.env.up_node(cn))
-            self.insert(self.env.down_node(cn))
+            if not(self.in_queue(cn)):
+                self.insert(self.env.right_node(cn))
+                self.insert(self.env.left_node(cn))
+                self.insert(self.env.up_node(cn))
+                self.insert(self.env.down_node(cn))
+                # print("\n\n(", str(cn.posX), ",", str(cn.posY), "): ", end = "")
+                # self.print_queue()
 
 
 
