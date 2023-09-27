@@ -4,10 +4,14 @@ class Board:
     def __init__(self, n):
         self.size = n
 
-        ## randomly generate queens in different rows
-        self.queens = [random.randint(0, n-1) for _ in range(n)]
+        ## randomly generate queens in different rows[i for i in range(n)]
+        self.inital_queens = [random.randint(0, n-1) for _ in range(n)]
 
-    
+        self.queens = self.inital_queens.copy()
+
+    def reset(self):
+        self.queens = self.inital_queens.copy()
+
     def set_queens(self, queens: list):
         self.queens = queens
 
@@ -44,6 +48,17 @@ class Board:
 
         return h
 
+    def get_random_neighbor(self):
+        n = len(self.queens)
+        neighbor = self.queens.copy()
+        i = random.randint(0, n-1)
+        j = random.randint(0, n-1)
+        while j == neighbor[i]:
+            j = random.randint(0, n-1)
+        neighbor[i] = j
+        return neighbor
+        
+    
     def get_best_neighbor(neighbors: list):
         best_neighbor = neighbors[0]
         best_h = Board.calculate_h(best_neighbor)

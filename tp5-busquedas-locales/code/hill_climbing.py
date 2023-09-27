@@ -5,7 +5,7 @@ class HillClimbing:
         current = board
         while self.iterations < maxIterations:
             if Board.calculate_h(current.queens) == 0:
-                return current
+                return 
             self.iterations += 1
             neighbors = current.get_neighbors()
             best_neighbor = Board.get_best_neighbor(neighbors)
@@ -25,6 +25,6 @@ class HillClimbing:
     def get_iterations(self):
         return self.iterations
 
-    def print_last_board(self):
-        self.last_board.print_board()
+    def print_board(self):
+        self.board.print_board()
 
