@@ -65,7 +65,7 @@ class Board:
             else:
                 print("███", end="")
 
-        print("Board:")
+        print()
         for i in range(len(self.queens)):
             for j in range(len(self.queens)):
                 is_queen, is_black = False, False
@@ -75,5 +75,6 @@ class Board:
                     is_black = True
                 print_cell(is_queen, is_black)
             print()
-        print("h = ", Board.calculate_h(self.queens))
-        print()
+    
+    def get_current_h(self):
+        return Board.calculate_h(self.queens)
