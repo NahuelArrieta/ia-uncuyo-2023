@@ -8,10 +8,14 @@ class Board:
         self.queens = [random.randint(0, n-1) for _ in range(n)]
 
     
+    def set_queens(self, queens: list):
+        self.queens = queens
+
+    
     def get_queens(self):
         return self.queens
     
-    def get_neighors(self):
+    def get_neighbors(self):
         neighbors = []
         for i in range(self.size):
             for j in range(self.size):
@@ -21,7 +25,7 @@ class Board:
                     neighbors.append(neighbor)
         return neighbors
     
-    def calculate_h(queens):
+    def calculate_h(queens: list):
         h = 0
         for i in range(len(queens)):
             for j in range(i+1, len(queens)):
@@ -49,3 +53,27 @@ class Board:
                 best_neighbor = neighbor
                 best_h = h
         return best_neighbor
+    
+    def print_board(self):
+        def print_cell(is_queen: bool, is_black: bool):
+            if is_queen and is_black:
+                print(" ♛ ", end="")
+            elif is_queen and not(is_black):
+                print("█♛█", end="")
+            elif not(is_queen) and is_black:
+                print("   ", end="")
+            else:
+                print("███", end="")
+
+        print("Board:")
+        for i in range(len(self.queens)):
+            for j in range(len(self.queens)):
+                is_queen, is_black = False, False
+                if j == self.queens[i]:
+                    is_queen = True
+                if (i+j)%2 == 0:
+                    is_black = True
+                print_cell(is_queen, is_black)
+            print()
+        print("h = ", Board.calculate_h(self.queens))
+        print()
