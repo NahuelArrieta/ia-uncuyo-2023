@@ -23,6 +23,10 @@ class Solution:
     def __init__(self, queens: list):
         self.queens = queens
         self.h = self.calculate_h()
+        if self.h == 0:
+            self.fitness = 1
+        else:
+            self.fitness = 1 / self.h
     
     def get_queens(self):
         return self.queens
