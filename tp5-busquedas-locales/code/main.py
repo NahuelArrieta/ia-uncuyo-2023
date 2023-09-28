@@ -11,7 +11,6 @@ hill_climbing = HillClimbing(board, max_iterations)
 hill_climbing.print_board()
 print(hill_climbing.get_iterations())
 
-board.reset()
 
 ## Simulated Annealing
 simulated_annealing = SimulatedAnnealing(board, max_iterations)

@@ -2,29 +2,27 @@ from board import *
 
 class HillClimbing:
     def hill_climbing(self, board: Board, maxIterations):
-        current = board
-        while self.iterations < maxIterations:
-            if Board.calculate_h(current.queens) == 0:
+        current_solution = board.initial_solution
+        while len(self.solutions) < maxIterations:
+            self.solutions.append(current_solution)
+            best_neighbor = current_solution.get_best_neighbor()
+            
+            if best_neighbor.h >= current_solution.h or best_neighbor.h == 0:
                 return 
-            self.iterations += 1
-            neighbors = current.get_neighbors()
-            best_neighbor = Board.get_best_neighbor(neighbors)
-            current.set_queens(best_neighbor)
+            
+            current_solution = best_neighbor
 
-    def __init__(self, board, maxIterations):
+    def __init__(self, board: Board, maxIterations):
         self.board = board
-        self.iterations = 0
-        self.last_board = self.hill_climbing(board, maxIterations)
+        self.solutions = []
+        self.hill_climbing(board, maxIterations)
 
-    def get_queens(self):
-        return self.last_board.get_queens()
-    
-    def get_h_value(self):
-        return Board.calculate_h(self.last_board.get_queens())
+    def get_last_solution(self):
+        return self.solutions[-1]
     
     def get_iterations(self):
-        return self.iterations
+        return len(self.solutions)
 
     def print_board(self):
-        self.board.print_board()
+        self.board.print_board(self.get_last_solution().get_queens())
 
