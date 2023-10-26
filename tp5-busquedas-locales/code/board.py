@@ -2,6 +2,7 @@ import random
 
 class Solution:
     def calculate_h(self):
+        ## h is the number of pairs of queens that are attacking each other
         queens = self.queens
         h = 0
         for i in range(len(queens)):
@@ -30,6 +31,9 @@ class Solution:
     
     def get_queens(self):
         return self.queens
+    
+    def are_equal(self, solution):
+        return self.queens == solution.queens
     
     def get_neighbors(self):
         n = len(self.queens)
