@@ -76,15 +76,7 @@ class Board:
         inital_queens = [random.randint(0, n-1) for _ in range(n)]
         self.initial_solution = Solution(inital_queens)   
 
-    def print_cell(self, is_queen: bool, is_black: bool):
-        if is_queen and is_black:
-            print(" ♛ ", end="")
-        elif is_queen and not(is_black):
-            print("█♛█", end="")
-        elif not(is_queen) and is_black:
-            print("   ", end="")
-        else:
-            print("███", end="")  
+  
     
     def print_board(self, queens = None):
         if queens == None:
@@ -92,10 +84,9 @@ class Board:
         print()
         for i in range(len(queens)):
             for j in range(len(queens)):
-                is_queen, is_black = False, False
                 if j == queens[i]:
-                    is_queen = True
-                if (i+j)%2 == 0:
-                    is_black = True
-                self.print_cell(is_queen, is_black)
+                    print("Q", end=" ")
+                else:
+                    print(".", end=" ")
+                
             print()
