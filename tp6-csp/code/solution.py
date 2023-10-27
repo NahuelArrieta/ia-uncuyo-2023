@@ -16,6 +16,13 @@ class Solution:
     def __init__(self, n):
         self.rows = [Solution.Row(i,n) for i in range(n)]
         self.n = n
+        self.steps_done = 0
+
+    def increase_steps_done(self):
+        self.steps_done += 1
+    
+    def get_steps_done(self):
+        return self.steps_done
 
     def print_solution(self):
         for i in range(self.n):

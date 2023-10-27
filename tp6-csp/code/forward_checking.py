@@ -3,7 +3,8 @@ from solution import *
 
 ## use less_restrictive_value heuristic
 def do_forward_checking(solution: Solution):
-    print("_")
+    solution.increase_steps_done()
+    
     ## if solution is complete return True
     if solution.is_complete():
         return True
