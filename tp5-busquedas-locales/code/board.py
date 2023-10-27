@@ -25,7 +25,7 @@ class Solution:
         self.queens = queens
         self.h = self.calculate_h()
         if self.h == 0:
-            self.fitness = 1
+            self.fitness = 2
         else:
             self.fitness = 1 / self.h
     

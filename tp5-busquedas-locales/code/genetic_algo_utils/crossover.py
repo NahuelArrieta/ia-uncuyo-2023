@@ -18,8 +18,8 @@ class Crossover:
         for i in range(0, n, 2):
             length = len(parents[0].queens)
             crossover_point = random.randint(1, length-1)
-            child_1_queens = parents[i].queens[:crossover_point] + parents[1].queens[crossover_point:]
-            child_2_queens = parents[i+1].queens[:crossover_point] + parents[0].queens[crossover_point:]
+            child_1_queens = parents[i].queens[:crossover_point] + parents[i+1].queens[crossover_point:]
+            child_2_queens = parents[i+1].queens[:crossover_point] + parents[i].queens[crossover_point:]
             new_solutions.append(Solution(child_1_queens))
             new_solutions.append(Solution(child_2_queens))
         return new_solutions

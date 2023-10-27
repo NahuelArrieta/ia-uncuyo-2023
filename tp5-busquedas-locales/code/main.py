@@ -3,7 +3,7 @@ from simulated_annealing import *
 from board import *
 from genetic_algo import *
 
-board = Board(4)
+board = Board(16)
 board.print_board()
 max_iterations = 1000
 
@@ -22,7 +22,7 @@ print(simulated_annealing.get_iterations())
 replacement = replacement.Replacement("estilist")
 selection = selection.Selection("proportional")
 crossover = crossover.Crossover("one_point")
-mutation = mutation.Mutation("random")
+mutation = mutation.Mutation("swip_queens")
 
 genetic_algorithm = GeneticAlgorithm(board, 100, max_iterations, selection, replacement, crossover, mutation)
 genetic_algorithm.print_board()

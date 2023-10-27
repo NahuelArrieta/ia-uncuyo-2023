@@ -20,9 +20,7 @@ class Mutation:
         n = len(queens)
         i = random.randint(0, n-1)
         j = random.randint(0, n-1)
-        while j == queens[i]:
-            j = random.randint(0, n-1)
-        queens[i] = j
+        queens[i], queens[j] = queens[j], queens[i]
         return queens
 
     def random_mutation(self, queens):

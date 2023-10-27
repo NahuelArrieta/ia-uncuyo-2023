@@ -9,15 +9,18 @@ class GeneticAlgorithm:
         return False
     
     def genetic_algo(self, maxIterations):
-        ## init random solutions
+        ## init random solutions with no repeated columns
         for _ in range(self.population_size):
             queens = []
-            for _ in range(self.board.size):
-                queens.append(random.randint(0, self.board.size-1))
-            self.solution_list.append(Solution(queens))
+            for i in range(self.board.size):
+                queens.append(i)
+            random.shuffle(queens)
+            new_solution = Solution(queens)
+            if not self.in_solution_list(new_solution):
+                self.solution_list.append(new_solution)
+
         
-        ## sort solutions by fitness
-        self.solution_list.sort(key=lambda x: x.fitness, reverse=True)
+        
 
         ## while not found solution and not max iterations
         while self.solution_list[0].h != 0 and self.iterations < maxIterations:
@@ -36,6 +39,8 @@ class GeneticAlgorithm:
                     self.solution_list.append(new_solution)
             ## select new population
             self.solution_list = self.replacement(self.solution_list, self.population_size)
+            ## sort solutions by fitness
+            self.solution_list.sort(key=lambda x: x.fitness, reverse=True)
            
 
 
