@@ -1,3 +1,39 @@
+library(readr)
+
+
+## Get the dataframe
+get_dataframe <- function(file_path) {
+    dataframe <-  readr::read_csv(file_path,col_types = cols(
+        id = col_integer(),
+        especie = col_character(),
+        ultima_modificacion = col_character(),
+        altura = col_character(),
+        circ_tronco_cm = col_double(),
+        diametro_tronco = col_character(),
+        long = col_double(),
+        lat = col_double(),
+        seccion = col_integer(),
+        nombre_seccion = col_character(),
+        area_seccion = col_double()
+    ))
+    return(dataframe)
+}
+
+## Get test dataframe
+get_test_dataframe <- function() {
+    file_path <- "/home/aarrieta/Documents/Facultad/Inteligencia Artificial 1/practica/tp7-ml/code/dataset/arbolado-mendoza-dataset-validation.csv"
+    dataframe <- get_dataframe(file_path)
+    return(dataframe)
+}
+
+## Get train dataframe
+get_train_dataframe <- function() {
+    file_path <- "/home/aarrieta/Documents/Facultad/Inteligencia Artificial 1/practica/tp7-ml/code/dataset/arbolado-mendoza-dataset-train.csv"
+    dataframe <- get_dataframe(file_path)
+    return(dataframe)
+}
+
+
 ## print results
 print_result <- function(dataframe) {
     # Calculate True Positives (TP)
