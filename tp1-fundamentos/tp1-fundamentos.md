@@ -48,3 +48,22 @@ El **naturalismo biológico** dice que los estados mentales son características
 En el ejemplo del **cuarto chino** un ser humano que solo entiende inglés está en un cuarto equipado con un manual de instrucciones escrito en inglés. A través de una abertura en el cuarto aparecen trozos de papel con símbolos indescifrables. El  humano encuentra símbolos coincidentes en el manual de instrucciones y sigue las indicaciones. Las instrucciones pueden incluir escribir símbolos en nuevos trozos de papel, encontrar símbolos en las pilas, reorganizar las pilas, y así sucesivamente. Eventualmente, las instrucciones harán que uno o más símbolos sean transcritos en un trozo de papel que se envía de vuelta al mundo exterior.
 
 
+<h3 style="text-decoration:underline"> La ética y los riesgos de desarrollar Inteligencia Artificial. <h3>
+
+- <p style="text-decoration:underline"> Las personas podrían perder sus empleos debido a la automatización:</p> 
+Existe la preocupación de que ciertas tareas sean reemplazados por máquinas y sistemas automatizados. Esto podría llevar a la pérdida de trabajos para muchas personas cuyas tareas pueden ser realizadas más eficiente por la IA.
+
+- <p style="text-decoration:underline"> Las personas podrían tener demasiado tiempo libre:</p>
+Si la automatización se implementa ampliamente, es posible que algunas personas tengan más tiempo libre debido a la reducción de ciertas tareas laborales. 
+
+- <p style="text-decoration:underline"> Las personas podrían perder su sentido de ser únicas:</p> 
+A medida que las máquinas se vuelven más capaces de realizar tareas complejas, algunas personas podrían enfrentar desafíos para encontrar su lugar en un mundo donde la tecnología tiene un papel más importante.
+
+- <p style="text-decoration:underline"> Los sistemas de IA podrían ser utilizados para fines no deseados:</p> 
+Los sistemas de IA pueden ser utilizados para propagar información falsa, influir en la opinión pública o incluso para llevar a cabo ataques cibernéticos. 
+
+- <p style="text-decoration:underline"> El uso de sistemas de IA podría resultar en una pérdida de responsabilidad:</p>
+A medida que los sistemas de inteligencia artificial toman decisiones y realizan tareas, puede resultar difícil determinar quién es responsable en caso de errores o consecuencias negativas. 
+
+- <p style="text-decoration:underline"> El éxito de la IA podría significar el fin de la raza humana:</p>
+Si la inteligencia artificial alcanza un nivel de desarrollo tan avanzado que supera la inteligencia humana, podría plantear desafíos existenciales sobre posibles escenarios en los que la IA podría volverse incontrolable o superar a los humanos en términos de capacidad intelectua.
