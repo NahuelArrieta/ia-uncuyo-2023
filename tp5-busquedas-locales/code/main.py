@@ -7,25 +7,43 @@ board = Board(16)
 board.print_board()
 max_iterations = 1000
 
+iterations_per_algo = 2
+
 ## Hill Climbing
-hill_climbing = HillClimbing(board, max_iterations)
-hill_climbing.print_board()
-print(hill_climbing.get_iterations())
+def iterate_hc():
+    correct_solutions_hc = 0
+    for _ in range(iterations_per_algo):
+        hill_climbing = HillClimbing(board, max_iterations)
+        if hill_climbing.get_last_solution().h == 0:
+            correct_solutions_hc += 1
+            iterations = hill_climbing.get_iterations()
+            time = hill_climbing.get_time()
+
 
 
 ## Simulated Annealing
-simulated_annealing = SimulatedAnnealing(board, max_iterations)
-simulated_annealing.print_board()
-print(simulated_annealing.get_iterations())
+def iterate_sa():
+    correct_solutions_sa = 0
+    for _ in range(iterations_per_algo):
+        simulated_annealing = SimulatedAnnealing(board, max_iterations)
+        if simulated_annealing.get_last_solution().h == 0:
+            correct_solutions_sa += 1
+            iterations = simulated_annealing.get_iterations()
+            time = simulated_annealing.get_time()
+
 
 ## Genetic Algorithm
-replacement = replacement.Replacement("estilist")
-selection = selection.Selection("proportional")
-crossover = crossover.Crossover("one_point")
-mutation = mutation.Mutation("swip_queens")
-
-genetic_algorithm = GeneticAlgorithm(board, 100, max_iterations, selection, replacement, crossover, mutation)
-genetic_algorithm.print_board()
-print(genetic_algorithm.get_iterations())
+def iterate_ga():
+    r = replacement.Replacement("estilist")
+    s = selection.Selection("proportional")
+    c = crossover.Crossover("one_point")
+    m = mutation.Mutation("swip_queens")
+    correct_solutions_ga = 0
+    for _ in range(iterations_per_algo):
+        genetic_algorithm = GeneticAlgorithm(board, 100, max_iterations, s, r, c, m)
+        if genetic_algorithm.get_last_solution().h == 0:
+            correct_solutions_ga += 1
+            iterations = genetic_algorithm.get_iterations()
+            time = genetic_algorithm.get_time()
 
 

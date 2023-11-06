@@ -1,5 +1,6 @@
 from board import *
 import math
+import time
 
 class SimulatedAnnealing:
     def simulated_annealing(self, board: Board, maxIterations):
@@ -8,6 +9,7 @@ class SimulatedAnnealing:
             self.solutions.append(current_solution)
             neighbor = current_solution.get_random_neighbor()
             if current_solution.h == 0:
+                self.endTime = time.time()
                 return 
             
             delta = neighbor.h - current_solution.h
@@ -26,7 +28,11 @@ class SimulatedAnnealing:
         self.solutions = []
         self.temperature = 50
         self.alpha = 0.50
+        self.startTime = time.time()
         self.simulated_annealing(board, maxIterations)
+
+    def get_time(self):
+        return self.endTime - self.startTime
 
     def get_last_solution(self):
         return self.solutions[-1]
