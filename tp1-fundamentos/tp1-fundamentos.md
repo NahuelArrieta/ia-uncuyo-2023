@@ -2,7 +2,7 @@
 
 ## 1. A partir del capítulo 26 de AIMA  (3er ta edición), se deberá desarrollar un resumen sobre los conceptos más importantes volcados en el capítulo.
 
-<h3 style="text-decoration:underline"> Inteligencia Artificial Débil <h3>
+<h3 style="text-decoration:underline"> Inteligencia Artificial Débil </h3>
 
 El desarrolllo de al Inteligencia Artificial trae consigo la pregunta de si las máquinas son capaces de pensar como el ser humano o simplemente simular este comportamiento. La hipótesis de la **IA débil** responde a esto que las computadoras no poseen esta capacidad.
 
@@ -19,7 +19,7 @@ Otro argumento viene de la mano del **Teorema de la incompletitud de Gödel**, y
 
 El **argumento de la informalidad** afirma que el comportamiento humano es demasiado complejo para ser capturado por un conjunto de reglas (qualification problem).
 
-<h3 style="text-decoration:underline"> Inteligencia Artificial Fuerte <h3>
+<h3 style="text-decoration:underline"> Inteligencia Artificial Fuerte </h3>
 
 Muchos filósofos establecen que si una computadora pasa el Test de Turing no significa necesariamente que esté pensando, sino que esta simulando hacerlo.
 
@@ -48,7 +48,7 @@ El **naturalismo biológico** dice que los estados mentales son características
 En el ejemplo del **cuarto chino** un ser humano que solo entiende inglés está en un cuarto equipado con un manual de instrucciones escrito en inglés. A través de una abertura en el cuarto aparecen trozos de papel con símbolos indescifrables. El  humano encuentra símbolos coincidentes en el manual de instrucciones y sigue las indicaciones. Las instrucciones pueden incluir escribir símbolos en nuevos trozos de papel, encontrar símbolos en las pilas, reorganizar las pilas, y así sucesivamente. Eventualmente, las instrucciones harán que uno o más símbolos sean transcritos en un trozo de papel que se envía de vuelta al mundo exterior.
 
 
-<h3 style="text-decoration:underline"> La ética y los riesgos de desarrollar Inteligencia Artificial. <h3>
+<h3 style="text-decoration:underline"> La ética y los riesgos de desarrollar Inteligencia Artificial. </h3>
 
 - <p style="text-decoration:underline"> Las personas podrían perder sus empleos debido a la automatización:</p> 
 Existe la preocupación de que ciertas tareas sean reemplazados por máquinas y sistemas automatizados. Esto podría llevar a la pérdida de trabajos para muchas personas cuyas tareas pueden ser realizadas más eficiente por la IA.
@@ -70,3 +70,10 @@ Si la inteligencia artificial alcanza un nivel de desarrollo tan avanzado que su
 
 ## 2. Realizar un mapa mental de los conceptos y sus relaciones.
 Link: https://www.mindomo.com/es/mindmap/c57b62ac72db498d8049ffc08313ead2
+
+## 3. Indique una opinión personal sobre los enfoques tratados en el capítulo, su alcance, su viabilidad, etc.
+
+En lo personal creo que el avance de la Inteligencia Artificicial va a traer consigo una revolución tecnológica muy acelerada y que va a cambiar la forma en la que vivimos. Por esto mismo, considero muy importante discutir sobre el alcance de la misma y los riesgos que puede traer.
+Yo no creo que la IA vaya a ser capaz de pensar como un humano, pero sí creo que va a ser capaz de realizar tareas complejas y de aprender de sus errores. Se deben repensar los trabajos que se van a realizar en el futuro y la forma en la que se van a realizar todas las tareas cotidianas. 
+El cambio va a ser inevitable pero una buena planificación puede ayudar a que sea para mejor. Se debe contemplar los trabajos reemplazables, los riesgos de mal uso, y la responsabilidad de los errores que puedan cometer los sistemas de IA.
+Todos estos temas deben ser discutidos por la sociedad en general, y no solo por los científicos de la computación, ya que el impacto de la IA va a ser muy grande y va a afectar a todos.
