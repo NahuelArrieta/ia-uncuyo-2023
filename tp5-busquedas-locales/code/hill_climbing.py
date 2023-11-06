@@ -1,5 +1,5 @@
 from board import *
-from time import time
+import time
 
 class HillClimbing:
     def hill_climbing(self, board: Board, maxIterations):

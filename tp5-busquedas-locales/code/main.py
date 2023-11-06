@@ -3,7 +3,7 @@ from simulated_annealing import *
 from board import *
 from genetic_algo import *
 
-board = Board(16)
+board = Board(8)
 board.print_board()
 max_iterations = 1000
 
@@ -47,3 +47,6 @@ def iterate_ga():
             time = genetic_algorithm.get_time()
 
 
+iterate_ga()
+iterate_hc()
+iterate_sa()

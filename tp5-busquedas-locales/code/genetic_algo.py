@@ -57,6 +57,9 @@ class GeneticAlgorithm:
         self.startTime = time.time()
         self.genetic_algo(maxIterations)
 
+    def get_time(self):
+        return self.endTime - self.startTime
+
     def get_last_solution(self):
         return self.solution_list[0]
     
