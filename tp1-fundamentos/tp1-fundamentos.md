@@ -67,3 +67,6 @@ A medida que los sistemas de inteligencia artificial toman decisiones y realizan
 
 - <p style="text-decoration:underline"> El éxito de la IA podría significar el fin de la raza humana:</p>
 Si la inteligencia artificial alcanza un nivel de desarrollo tan avanzado que supera la inteligencia humana, podría plantear desafíos existenciales sobre posibles escenarios en los que la IA podría volverse incontrolable o superar a los humanos en términos de capacidad intelectua.
+
+## 2. Realizar un mapa mental de los conceptos y sus relaciones.
+Link: https://www.mindomo.com/es/mindmap/c57b62ac72db498d8049ffc08313ead2
