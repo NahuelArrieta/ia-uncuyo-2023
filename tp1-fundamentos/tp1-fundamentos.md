@@ -77,3 +77,7 @@ En lo personal creo que el avance de la Inteligencia Artificicial va a traer con
 Yo no creo que la IA vaya a ser capaz de pensar como un humano, pero sí creo que va a ser capaz de realizar tareas complejas y de aprender de sus errores. Se deben repensar los trabajos que se van a realizar en el futuro y la forma en la que se van a realizar todas las tareas cotidianas. 
 El cambio va a ser inevitable pero una buena planificación puede ayudar a que sea para mejor. Se debe contemplar los trabajos reemplazables, los riesgos de mal uso, y la responsabilidad de los errores que puedan cometer los sistemas de IA.
 Todos estos temas deben ser discutidos por la sociedad en general, y no solo por los científicos de la computación, ya que el impacto de la IA va a ser muy grande y va a afectar a todos.
+
+## 4. Realizar un comentario de You Are Not a Parrot
+La IA generativa es solo una pequeña parte del enorme potencial que podemos aprovechar con respecto a todo el mundo de la Inteligencia Artificial. En lo personal, me ha sido de gran ayuda para realizar distintas actividades cotidianas, académicas (me ayudó a escribir esto) o laborales. 
+Si bien es cierto lo que comenta el articulo, sobre como estas IA repiten combinaciones de palabras según sus algoritmos, pareciendo loros; su potencial es mucho mayor. Con una correcta supervisión y con buenos prompts podemos hacer que estos sistemas nos den resultados muy útiles en las distintas tareas que realizamos en el día a día.
