@@ -18,7 +18,7 @@ bigger_class <- function(dataframe) {
 }
 
 # Usage:
-data_test <- get_test_dataframe()
+data_test <- get_validation_dataframe()
 data_test <- bigger_class(data_test)
 
 

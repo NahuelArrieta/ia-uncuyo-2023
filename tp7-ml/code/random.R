@@ -12,7 +12,7 @@ random_classifier <- function(dataframe) {
 }
 
 # Usage:
-data_test <- get_test_dataframe()
+data_test <- get_validation_dataframe()
 data_test <- random_classifier(data_test)
 
 
