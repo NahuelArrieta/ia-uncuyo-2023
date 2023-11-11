@@ -54,7 +54,6 @@ class Attribute:
         remainder = self.remainder(examples, attribute)
 
         info_gain = b - remainder
-        print("info gain", info_gain)
 
         return info_gain
     
@@ -101,14 +100,13 @@ def plurality_values(examples: list):
             values[ex.classP] = 1
     
     max_value = 0
-    max_key = None
+    max_key = list(values.keys())[0]  ## get random key
     for key in values:
         if values[key] > max_value:
             max_value = values[key]
             max_key = key
     
-    return max_key
-        
+    return Node(None, max_key)
     
 
 def all_same_class(examples):
@@ -126,7 +124,7 @@ def select_attribute(examples, attributes, minimum_information_gain) -> Attribut
         if gain > max_gain:
             max_gain = gain
             max_attribute = attribute
-
+    
     if max_gain < minimum_information_gain:
         return None
     

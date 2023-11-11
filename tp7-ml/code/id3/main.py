@@ -2,7 +2,7 @@ import random
 from decisionTree import *
 from testTree import *
 
-minimum_information_gain = 0.2
+minimum_information_gain = 0.23
 
 ## read the file
 file = open("./tp7-ml/code/id3/tennis.csv", "r")
@@ -24,11 +24,19 @@ for line in lines[1:]:
 
 tree = make_tree(examples, attributes[:-1], None, minimum_information_gain)
 
-## get random example
-n = random.randint(0, len(examples)-1)
-example = examples[n]
+print("\nMin information gain: " + str(minimum_information_gain))
 
-example.print_example()
-print(get_prediction(tree, example))
+print("\nRules of the tree:")
+print_tree_rules(tree)
+
+## get batch of random examples = 10
+random_examples = random.sample(examples, 10)
+
+## test the tree with the batch
+tp, tn, fp, fn = test_tree(random_examples, tree)
+
+## print the results}
+print("\nResults:")
+print_results(tp, tn, fp, fn)
 
 
