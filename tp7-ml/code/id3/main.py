@@ -1,4 +1,6 @@
+import random
 from decisionTree import *
+from testTree import *
 
 file = open("./tp7-ml/code/id3/tennis.csv", "r")
 lines = file.readlines()
@@ -18,5 +20,12 @@ for line in lines[1:]:
 
 
 tree = make_tree(examples, attributes[:-1], None)
+
+## get random example
+n = random.randint(0, len(examples)-1)
+example = examples[n]
+
+example.print_example()
+print(get_prediction(tree, example))
 
 

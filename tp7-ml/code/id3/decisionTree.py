@@ -83,6 +83,8 @@ class Example:
         ## set the class to predict as the last value
         self.classP = valuesStr[-1]
 
+    def print_example(self):
+        print(self.values, self.classP)
     
 
 
