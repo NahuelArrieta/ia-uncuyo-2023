@@ -1,8 +1,10 @@
 
+import math
+
+
 class Attribute:
-    def __init__(self, name, values: list):
+    def __init__(self, name):
         self.name = name
-        self.values = values
 
        
 
@@ -37,7 +39,7 @@ class Attribute:
     
 
 class Node: 
-    def __init__(self, attribute)
+    def __init__(self, attribute):
         self.attribute = attribute
         self.branches = []
     
@@ -123,7 +125,7 @@ def make_tree(examples, attributes, parent_examples) -> Node:
         # Add a new branch below node corresponding to the test attribute = value
         exs = [ex for ex in examples if ex.attribute == value]
         atts = [att for att in attributes if att != attribute]
-        subtree = make_tree_r(exs, atts, examples)
+        subtree = make_tree(exs, atts, examples)
         tree.add_branch(subtree)
 
     return tree
