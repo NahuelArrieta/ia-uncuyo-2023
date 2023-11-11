@@ -13,7 +13,10 @@ for name in attributesStr:
 ## the values are in the remaining lines
 examples = []
 for line in lines[1:]:
+    line = line.replace("\n", "")
     examples.append(Example(line, attributes))
 
 
-tree = make_tree(examples, attributes, None)
+tree = make_tree(examples, attributes[:-1], None)
+
+

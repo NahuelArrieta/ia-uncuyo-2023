@@ -5,45 +5,66 @@ import math
 class Attribute:
     def __init__(self, name):
         self.name = name
+        self.values = []
+    
+    def add_value(self, value):
+        for v in self.values:
+            if value == v :
+                return
+        self.values.append(value)
 
-       
+    def b(self, q):
+        if q == 0 or q == 1:
+            return 0
+        ## B(q) = −(q log2 q + (1 − q) log2 (1 − q))
+        return -(q * math.log(q, 2) + (1 - q) * math.log(1 - q, 2))
+    
+    def remainder(self, examples, attribute):
 
-    def get_entropy(self, examples):
-        # calculate the entropy of the examples
-        values = {}
-        for ex in examples:
-            if ex.classP in values:
-                values[ex.classP] += 1
-            else:
-                values[ex.classP] = 1
-        
-        entropy = 0
-        for key in values:
-            p = values[key] / len(examples)
-            entropy -= p * math.log(p, 2)
-        
-        return entropy
+        possible_values = set([ex.values[attribute.name] for ex in examples])
+
+        res = 0
+        for v in possible_values:
+            ## Get the postiives and negatives for each value
+            positive = [ex for ex in examples if ex.values[attribute.name] == v and ex.classP == "yes"]
+            negative = [ex for ex in examples if ex.values[attribute.name] == v and ex.classP == "no"]
+
+            pk = len(positive)
+            nk = len(negative)
+
+            if pk + nk == 0:
+                continue
+
+            res += (pk + nk)/len(examples) * self.b(pk/(pk + nk))
+
+        return res
+
+
+
 
     def information_gain(self, examples, attribute):
-        # calculate the entropy of the examples
-        entropy = self.get_entropy(examples)
+        ## Get the positives and negatives
+        positive = [ex for ex in examples if ex.classP == "yes"]
+        negative = [ex for ex in examples if ex.classP == "no"]
 
-        # calculate the sum of the entropy of the examples for each value of the attribute
-        sum_entropy = 0
-        for value in attribute.values:
-            exs = [ex for ex in examples if ex.attribute == value]
-            sum_entropy += self.get_entropy(exs)
+        p = len(positive)
+        n = len(negative)
 
-        # calculate the information gain
-        return entropy - sum_entropy
+        b = self.b(p/(p + n))
+        remainder = self.remainder(examples, attribute)
+
+        return b - remainder
     
 
 class Node: 
-    def __init__(self, attribute):
+    def __init__(self, attribute, classP = None):
         self.attribute = attribute
+        self.values = []
         self.branches = []
+        self.classP = classP
     
-    def add_branch(self, node):
+    def add_branch(self, value, node):
+        self.values.append(value)
         self.branches.append(node)
 
 class Example:
@@ -57,6 +78,7 @@ class Example:
             currentValue = valuesStr[i]
             currentAttribute = attributes[i]
             self.values[currentAttribute.name] = currentValue
+            currentAttribute.add_value(currentValue)
         
         ## set the class to predict as the last value
         self.classP = valuesStr[-1]
@@ -79,6 +101,8 @@ def plurality_values(examples: list):
         if values[key] > max_value:
             max_value = values[key]
             max_key = key
+    
+    return max_key
         
     
 
@@ -108,7 +132,7 @@ def make_tree(examples, attributes, parent_examples) -> Node:
     
     # else if all examples have the same classification then return the classification
     if all_same_class(examples):
-        return examples[0].classP
+        return Node(None, examples[0].classP)
 
     # else if attributes is empty then return PLURALITY-VALUE(examples)
     if len(attributes) == 0:
@@ -123,10 +147,10 @@ def make_tree(examples, attributes, parent_examples) -> Node:
     # For each possible value of attribute
     for value in attribute.values:
         # Add a new branch below node corresponding to the test attribute = value
-        exs = [ex for ex in examples if ex.attribute == value]
+        exs = [ex for ex in examples if ex.values[attribute.name] == value]
         atts = [att for att in attributes if att != attribute]
         subtree = make_tree(exs, atts, examples)
-        tree.add_branch(subtree)
+        tree.add_branch(value, subtree)
 
     return tree
 
