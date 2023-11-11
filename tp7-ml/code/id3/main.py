@@ -2,6 +2,9 @@ import random
 from decisionTree import *
 from testTree import *
 
+minimum_information_gain = 0.2
+
+## read the file
 file = open("./tp7-ml/code/id3/tennis.csv", "r")
 lines = file.readlines()
 
@@ -19,7 +22,7 @@ for line in lines[1:]:
     examples.append(Example(line, attributes))
 
 
-tree = make_tree(examples, attributes[:-1], None)
+tree = make_tree(examples, attributes[:-1], None, minimum_information_gain)
 
 ## get random example
 n = random.randint(0, len(examples)-1)

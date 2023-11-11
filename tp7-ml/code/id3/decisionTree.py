@@ -53,7 +53,10 @@ class Attribute:
         b = self.b(p/(p + n))
         remainder = self.remainder(examples, attribute)
 
-        return b - remainder
+        info_gain = b - remainder
+        print("info gain", info_gain)
+
+        return info_gain
     
 
 class Node: 
@@ -115,7 +118,7 @@ def all_same_class(examples):
             return False
     return True
 
-def select_attribute(examples, attributes) -> Attribute:
+def select_attribute(examples, attributes, minimum_information_gain) -> Attribute:
     max_gain = 0
     max_attribute = None
     for attribute in attributes:
@@ -123,11 +126,14 @@ def select_attribute(examples, attributes) -> Attribute:
         if gain > max_gain:
             max_gain = gain
             max_attribute = attribute
+
+    if max_gain < minimum_information_gain:
+        return None
     
     return max_attribute
     
 
-def make_tree(examples, attributes, parent_examples) -> Node:
+def make_tree(examples, attributes, parent_examples, minimum_information_gain = 0) -> Node:
     # if examples is empty then return P LURALITY-VALUE(parent examples)
     if len(examples) == 0:
         return plurality_values(parent_examples)
@@ -141,7 +147,11 @@ def make_tree(examples, attributes, parent_examples) -> Node:
         return plurality_values(examples)
 
     # Select the best attribute
-    attribute = select_attribute(examples, attributes)
+    attribute = select_attribute(examples, attributes, minimum_information_gain)
+
+    # If the information gain is less than the minimum information gain then return PLURALITY-VALUE(examples)
+    if attribute == None:
+        return plurality_values(examples)
 
     # Create a new decision tree node with attribute test
     tree = Node(attribute)
