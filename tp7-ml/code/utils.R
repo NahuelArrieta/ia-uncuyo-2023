@@ -35,14 +35,14 @@ get_train_dataframe <- function() {
 
 ## Gett full dataframe
 get_full_dataframe <- function() {
-    file_path <- "/home/aarrieta/Documents/Facultad/Inteligencia Artificial 1/practica/tp7-ml/code/dataset/arbolado-mendoza-dataset.csv"
+    file_path <- "/home/aarrieta/Documents/Facultad/Inteligencia Artificial 1/practica/tp7-ml/code/dataset/arbolado-mza-dataset.csv"
     dataframe <- get_dataframe(file_path)
     return(dataframe)
 }
 
 ## Get test dataframe
 get_test_dataframe <- function() {
-    file_path <- "/home/aarrieta/Documents/Facultad/Inteligencia Artificial 1/practica/tp7-ml/code/dataset/arbolado-mendoza-dataset-test.csv"
+    file_path <- "/home/aarrieta/Documents/Facultad/Inteligencia Artificial 1/practica/tp7-ml/code/dataset/arbolado-mza-dataset-test.csv"
     dataframe <- get_dataframe(file_path)
     return(dataframe)
 }
