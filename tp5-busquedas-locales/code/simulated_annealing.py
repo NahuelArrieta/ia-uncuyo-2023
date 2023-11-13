@@ -32,6 +32,9 @@ class SimulatedAnnealing:
         self.startTime = time.time()
         self.simulated_annealing(board, maxIterations)
 
+    def get_h_values(self):
+        return [solution.h for solution in self.solutions]
+
     def get_time(self):
         return self.endTime - self.startTime
 

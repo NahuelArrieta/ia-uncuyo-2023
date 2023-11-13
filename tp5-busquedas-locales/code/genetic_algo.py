@@ -22,6 +22,8 @@ class GeneticAlgorithm:
 
         ## while not found solution and not max iterations
         while self.solution_list[0].h != 0 and self.iterations < maxIterations:
+            self.best_solutions.append(self.solution_list[0])
+
             self.iterations += 1
             ## select parents
             number_of_parents = int(self.population_size / 2)
@@ -53,6 +55,7 @@ class GeneticAlgorithm:
         self.crossover = crossover
         self.mutation = mutation
         self.solution_list = []
+        self.best_solutions = []
         self.iterations = 0
         self.startTime = time.time()
         self.genetic_algo(maxIterations)
@@ -68,7 +71,9 @@ class GeneticAlgorithm:
 
     def print_board(self):
         self.board.print_board(self.get_last_solution().get_queens())
-        
+    
+    def get_h_values(self):
+        return [solution.h for solution in self.best_solutions]
 
         
 
