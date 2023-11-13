@@ -4,7 +4,9 @@
 
 ### 4 Reinas
 
-- Procentajes de soluciones optimas
+- Porcentajes de soluciones optimas
+
+![](./images/4q_solutions.png)
 
 - Tiempo de ejecución
 
@@ -12,7 +14,9 @@
 
 ### 8 Reinas
 
-- Procentajes de soluciones optimas
+- Porcentajes de soluciones optimas
+
+![](./images/8q_solutions.png)
 
 - Tiempo de ejecución
 
@@ -20,7 +24,9 @@
 
 ### 10 Reinas
 
-- Procentajes de soluciones optimas
+- Porcentajes de soluciones optimas
+
+![](./images/10q_solutions.png)
 
 - Tiempo de ejecución
 
