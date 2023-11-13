@@ -19,6 +19,8 @@ class GeneticAlgorithm:
             new_solution = Solution(queens)
             if not self.in_solution_list(new_solution):
                 self.solution_list.append(new_solution)
+        
+        self.best_solutions.append(self.solution_list[0])
 
         ## while not found solution and not max iterations
         while self.solution_list[0].h != 0 and self.iterations < maxIterations:
@@ -42,6 +44,7 @@ class GeneticAlgorithm:
             ## sort solutions by fitness
             self.solution_list.sort(key=lambda x: x.fitness, reverse=True)
         
+        self.best_solutions.append(self.solution_list[0])
         self.endTime = time.time()
            
 
@@ -58,6 +61,7 @@ class GeneticAlgorithm:
         self.best_solutions = []
         self.iterations = 0
         self.startTime = time.time()
+        self.endTime = 0
         self.genetic_algo(maxIterations)
 
     def get_time(self):

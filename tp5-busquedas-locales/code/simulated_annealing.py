@@ -22,6 +22,7 @@ class SimulatedAnnealing:
                 if random.random() < probability:
                     self.temperature *= self.alpha
                     current_solution = neighbor
+        self.endTime = time.time()
             
 
     def __init__(self, board, maxIterations):
@@ -30,12 +31,15 @@ class SimulatedAnnealing:
         self.temperature = 0.9
         self.alpha = 0.95
         self.startTime = time.time()
+        self.endTime = 0
         self.simulated_annealing(board, maxIterations)
 
     def get_h_values(self):
         return [solution.h for solution in self.solutions]
 
     def get_time(self):
+        if self.endTime == 0:
+            self.endTime = time.time()
         return self.endTime - self.startTime
 
     def get_last_solution(self):

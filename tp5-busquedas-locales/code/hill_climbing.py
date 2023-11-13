@@ -9,6 +9,7 @@ class HillClimbing:
             best_neighbor = current_solution.get_best_neighbor()
             
             if best_neighbor.h >= current_solution.h or best_neighbor.h == 0:
+                self.endTime = time.time()
                 return 
             
             current_solution = best_neighbor
@@ -18,6 +19,7 @@ class HillClimbing:
         self.board = board
         self.solutions = []
         self.startTime = time.time()
+        self.endTime = 0
         self.hill_climbing(board, maxIterations)
 
     def get_h_values(self):
