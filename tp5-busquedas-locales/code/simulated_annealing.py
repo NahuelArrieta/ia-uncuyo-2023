@@ -17,6 +17,7 @@ class SimulatedAnnealing:
                 ## if new_neighbor.h is less than current_solution.h, new_neighbor is better
                 current_solution = neighbor
             else:
+                exp = -delta/self.temperature
                 probability = math.exp(-delta/self.temperature)
                 if random.random() < probability:
                     self.temperature *= self.alpha
@@ -26,8 +27,8 @@ class SimulatedAnnealing:
     def __init__(self, board, maxIterations):
         self.board = board
         self.solutions = []
-        self.temperature = 50
-        self.alpha = 0.50
+        self.temperature = 0.9
+        self.alpha = 0.95
         self.startTime = time.time()
         self.simulated_annealing(board, maxIterations)
 
