@@ -12,6 +12,8 @@
 
 - Cantidad de pasos
 
+![](./images/4q_steps.png)
+
 ### 8 Reinas
 
 - Porcentajes de soluciones optimas
@@ -22,6 +24,8 @@
 
 - Cantidad de pasos
 
+![](./images/8q_steps.png)
+
 ### 10 Reinas
 
 - Porcentajes de soluciones optimas
@@ -31,6 +35,9 @@
 - Tiempo de ejecución
 
 - Cantidad de pasos
+
+![](./images/10q_steps.png)
+
 
 
 ## Graficar la variación  de la función h() a lo largo de las iteraciones
