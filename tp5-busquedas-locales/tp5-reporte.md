@@ -10,6 +10,8 @@
 
 - Tiempo de ejecución
 
+![](./images/4q_time.png)
+
 - Cantidad de pasos
 
 ![](./images/4q_steps.png)
@@ -22,6 +24,8 @@
 
 - Tiempo de ejecución
 
+![](./images/8q_time.png)
+
 - Cantidad de pasos
 
 ![](./images/8q_steps.png)
@@ -33,6 +37,8 @@
 ![](./images/10q_solutions.png)
 
 - Tiempo de ejecución
+
+![](./images/10q_time.png)
 
 - Cantidad de pasos
 
