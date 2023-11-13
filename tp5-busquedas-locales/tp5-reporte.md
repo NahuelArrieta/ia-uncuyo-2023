@@ -50,8 +50,14 @@
 
 ### Hill Climbing
 
+![](./images/h_hc.png)
+
 ### Simulated Annealing
 
+![](./images/h_sa.png)
+
 ### Genetic Algorithm
+
+![](./images/h_ga.png)
 
 ## Cuál de los tres algoritmos implementados resulta más adecuado para la solución del problema de las n-reinas
