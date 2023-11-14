@@ -24,3 +24,9 @@ El Sudoku es un juego de lógica en el que se debe completar una grilla de 9x9 c
         \lfloor{{i}\div{3}}\rfloor \neq \lfloor{{k}\div{3}}\rfloor \land 
         \lfloor{{j}\div{3}}\rfloor \neq \lfloor{{l}\div{3}}\rfloor \}$ 
 
+
+## Utilizar el algoritmo AC-3 para demostrar que la arco consistencia puede detectar la inconsistencia de la asignación parcial {WA=red, V=blue} para el problema del colorar el mapa de Australia
+
+En la siguiente imagen se muestra como se va reduciendo el dominio de las variables a medida que se van aplicando las restricciones de los arcos (ubicado a la izquierda en naranja) hasta que NT no tiene más valores posibles, demostrando la inconsistencia.
+
+![](./images/ac_3.png)
