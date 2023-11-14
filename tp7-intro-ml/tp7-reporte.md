@@ -76,5 +76,5 @@ La predicción sería "Green"; ya que la observación más cercana es 5, que tie
 ### c) ¿Cuál sería la predicción de Y para K = 3? ¿Por qué?
 La predicción es Y = "Red" porque 2 de sus 3 vecinos (obs_5 = "Green", obs_2 = obs_6 = "Red") más cercanos tienen esa clase.
 
-## d) Si la frontera de decisión es altamente no lineal, ¿Se esperaría que el mejor valor de K sea grande o pequeño? ¿Por qué?
+### d) Si la frontera de decisión es altamente no lineal, ¿Se esperaría que el mejor valor de K sea grande o pequeño? ¿Por qué?
 Para una frontera de decisión altamente no lineal, se esperaría que el mejor valor de K sea pequeño, ya que un valor grande de K implicaría una frontera de decisión más suave. 
