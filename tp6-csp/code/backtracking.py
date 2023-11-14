@@ -26,4 +26,5 @@ def do_backtracking(solution: Solution):
 def start_backtracking(n):
     solution = Solution(n)
     do_backtracking(solution)
+    solution.set_end_time()
     return solution

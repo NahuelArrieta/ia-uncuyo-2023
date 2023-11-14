@@ -25,4 +25,5 @@ def do_forward_checking(solution: Solution):
 def start_forward_checking(n):
     solution = Solution(n)
     do_forward_checking(solution)
+    solution.set_end_time()
     return solution

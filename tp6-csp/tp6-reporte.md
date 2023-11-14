@@ -49,5 +49,13 @@ Si comenzamos la propagación de restricciones desde las hojas del árbol, cada 
 ### Argumentar por qué lo demostrado en a. es suficiente
 Cada vez que se remueva un valor del dominio de una variable, se debe propagar la restricción a todas las variables que tengan una restricción binaria con esa variable. Como el grafo de restricciones es un árbol, cada vez que se remueva un valor del dominio de una variable, se propagará hasta la raíz del árbol. 
 
+## Implementar una solución al problema de las n-reinas utilizando una formulación CSP
 
+- Comparación de tiempos
+
+![](./images/time.png)
+
+- Comparación de cantidad de pasos
+
+![](./images/steps.png) 
 

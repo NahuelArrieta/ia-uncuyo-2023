@@ -1,3 +1,5 @@
+import time
+
 class Solution:
 
     class Row:
@@ -17,6 +19,14 @@ class Solution:
         self.rows = [Solution.Row(i,n) for i in range(n)]
         self.n = n
         self.steps_done = 0
+        self.start_time = time.time()
+
+    def set_end_time(self):
+        self.end_time = time.time()
+
+    def get_time(self):
+        return self.end_time - self.start_time
+
 
     def increase_steps_done(self):
         self.steps_done += 1
