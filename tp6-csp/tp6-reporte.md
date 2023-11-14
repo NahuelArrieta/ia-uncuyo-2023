@@ -40,5 +40,14 @@ La complejidad en el peor caso es $O(n * d^2)$, donde $n$ es la cantidad de vari
 
 Se puede llevar la cuenta en una matriz de d*n, contando la cantidad de valores que sean consistentes con cada valor de esa variable. Luego, al remover un valor del dominio de Xi, se puede actualizar la matriz restando 1 a cada valor de la columna correspondiente a Xi. De esta manera, se puede saber si el arco es consistente en O(1) y actualizar la matriz en O(n*d). Por lo tanto, la complejidad total es O(n² * d²) ya que se debe actualizar la matriz para cada arco.
 
+## Demostrar la correctitud del algoritmo CSP para  árboles estructurados (sección 5.4, p. 172 AIMA 2da edición). Para ello, demostrar: 
+### Que para un CSP cuyo grafo de restricciones es un árbol, 2-consistencia (consistencia de arco) implica n-consistencia (siendo n número total de variables)
+Si suponemos CSP es 2-consistente, para cada restricción binaria los valores en los dominios de las dos variables involucradas son consistentes.
+
+Si comenzamos la propagación de restricciones desde las hojas del árbol, cada vez que lleguemos al nodo padre de un arco, este será consistente ya que los valores de las variables involucradas en el arco son consistentes. Por lo tanto, el CSP será n-consistente.
+
+### Argumentar por qué lo demostrado en a. es suficiente
+Cada vez que se remueva un valor del dominio de una variable, se debe propagar la restricción a todas las variables que tengan una restricción binaria con esa variable. Como el grafo de restricciones es un árbol, cada vez que se remueva un valor del dominio de una variable, se propagará hasta la raíz del árbol. 
+
 
 
