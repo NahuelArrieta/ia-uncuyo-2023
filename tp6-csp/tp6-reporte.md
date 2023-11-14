@@ -30,3 +30,15 @@ El Sudoku es un juego de lógica en el que se debe completar una grilla de 9x9 c
 En la siguiente imagen se muestra como se va reduciendo el dominio de las variables a medida que se van aplicando las restricciones de los arcos (ubicado a la izquierda en naranja) hasta que NT no tiene más valores posibles, demostrando la inconsistencia.
 
 ![](./images/ac_3.png)
+
+
+## Cuál es la complejidad en el peor caso cuando se ejecuta AC-3 en un árbol estructurado CSP.
+
+La complejidad en el peor caso es $O(n * d^2)$, donde $n$ es la cantidad de variables y $d$ es el tamaño del dominio de las variables.
+
+## AC-3 coloca de nuevo en la cola todo arco (Xk, Xi) cuando cualquier valor es removido del dominio de Xi incluso si cada valor de Xk es consistente con los valores restantes de Xi. Supongamos que por  cada arco ( Xk,Xi)  se puede llevar la cuenta del número de valores restantes de Xi que sean consistentes con cada valor de Xk . Explicar como actualizar ese número de manera eficiente y demostrar que la arco consistencia puede lograrse en un tiempo total O(n² * d²).
+
+Se puede llevar la cuenta en una matriz de d*n, contando la cantidad de valores que sean consistentes con cada valor de esa variable. Luego, al remover un valor del dominio de Xi, se puede actualizar la matriz restando 1 a cada valor de la columna correspondiente a Xi. De esta manera, se puede saber si el arco es consistente en O(1) y actualizar la matriz en O(n*d). Por lo tanto, la complejidad total es O(n² * d²) ya que se debe actualizar la matriz para cada arco.
+
+
+
