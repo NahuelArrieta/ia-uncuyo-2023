@@ -11,7 +11,7 @@ random_classifier <- function(dataframe) {
 }
 ```
 
-| | Predicted Positive| Predicted Negative | |
+| | **Predicted Positive**| **Predicted Negative** | |
 |:--:|:--:|:--:|:--:|
 |**Actual Positive**| TP = 335 | FN = 355 | Sensitivity = 0.4855072  |
 |**Actual Negative**| FP = 2811 | TN = 2882 | Specificity = 0.5062357   |
@@ -33,7 +33,7 @@ bigger_class <- function(dataframe) {
 }
 ```
 
-| | Predicted Positive| Predicted Negative | |
+| | **Predicted Positive**| **Predicted Negative** | |
 |:--:|:--:|:--:|:--:|
 |**Actual Positive**| TP = 0 | FN = 690 | Sensitivity = 0 |
 |**Actual Negative**| FP = 0 | TN = 5693 | Specificity = 1 |
