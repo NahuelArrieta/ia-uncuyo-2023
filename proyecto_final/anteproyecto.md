@@ -53,7 +53,7 @@ Finalmente, al tener una gran cantidad de columnas y filas en el dataset creemos
 
 **Listado de actividades a realizar:**
 
-- **Actividad 1:** Recopilar información.**[2 días]**
+- **Actividad 1:** Recopilar información.**[5 días]**
 
 - **Actividad 2:** Limpiar la información.**[4 días]**
 
@@ -68,6 +68,9 @@ Finalmente, al tener una gran cantidad de columnas y filas en el dataset creemos
 - **Actividad 7:** Ajustes al modelo. **[4 días]**
 
 - **Actividad 8:** Elaboración del informe final. **[4 días]**
+
+**Grafico de las actividades:**
+![](gantt_heartbreak.png)
 
 
 
