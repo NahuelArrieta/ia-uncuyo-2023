@@ -43,6 +43,8 @@ Se utilizarán las siguientes métricas:
 
 - Especificidad (Specificity): Cuántas de las cuentas que el modelo etiqueta como falsas son verdaderamente falsas.
 
+Además de probarse utilizando una fracción del dataset de entrenamiento, también se generaran perfiles falsos con características aleatorias que serán utilizados para probar la capacidad del modelo de reconocer perfiles falsos de instagram.
+
 ## Justificación
 
 Consideramos que un modelo de machine learning es un enfoque correcto para el problema planteado porque estos pueden detectar patrones y relaciones complejas entre las características de las cuentas, las cuales quizá no capturamos a simple vista, también podríamos encontrar nuevas relaciones entre parámetros que caracterizan a una cuenta falsa o con seguidores comprados.
@@ -76,7 +78,7 @@ Finalmente, al tener una gran cantidad de columnas y filas en el dataset creemos
 
 ### Proyectos similares
 
-Se mencionan los siguientes proyectos similares al nuestro, con el objetivo de ayudarnos en el proceso de obtención de los datos, preprocesamiento de los mismos y la elección del algoritmo.
+Lamentablemente no encontramos que otros proyectos han hecho otros usuarios con el dataset que usaremos. Pero se encontraron los siguientes proyectos similares al nuestro, buscando en internet, con el objetivo de ayudarnos en el proceso de obtención de los datos, preprocesamiento de los mismos y la elección del algoritmo.
 
 **Distinción de bots y humanos en Twitter con Inteligencia Artificial**
 
